@@ -2,11 +2,11 @@ import { CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
-export function BookingButton({ floating = false }: { floating?: boolean }) {
+export function BookingButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className={floating ? "booking-fixed" : "btn btn-accent btn-lg h-auto whitespace-normal"}>
+        <Button className="btn btn-accent btn-lg h-auto whitespace-normal">
           <CalendarCheck aria-hidden />
           <span>Book an Appointment</span>
         </Button>
