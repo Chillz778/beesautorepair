@@ -235,7 +235,7 @@
   body { padding-bottom: 5rem; }
 }
 @media (hover: hover) and (pointer: fine) {
-  html, body, body * { cursor: url('/tyre-cursor.png') 12 12, auto !important; }
+  html, body, body * { cursor: url('/tyre-cursor.png') 9 9, auto !important; }
   input, textarea, [contenteditable='true'] { cursor: text !important; }
   :disabled { cursor: not-allowed !important; }
 }
