@@ -4,6 +4,7 @@ export const business = {
   name: "BEE'S Auto Repair",
   phoneDisplay: "(555) 010-0000", // placeholder — 555 numbers are reserved for fiction
   phoneHref: "tel:+15550100000",
+  smsHref: "sms:+15550100000",
 };
 
 export const navLinks = [
