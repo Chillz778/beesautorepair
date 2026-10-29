@@ -24,8 +24,6 @@
   --color-hero: var(--hero);
   --color-hero-foreground: var(--hero-foreground);
   --color-hero-muted: var(--hero-muted);
-  --color-booking: var(--booking);
-  --color-booking-foreground: var(--booking-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -75,9 +73,6 @@
   --hero: oklch(0.2 0.05 260);
   --hero-foreground: oklch(0.98 0.005 250);
   --hero-muted: oklch(0.85 0.02 250);
-  --booking: oklch(0.48 0.17 255);
-  --booking-foreground: oklch(0.99 0 0);
-  --shadow-booking: 0 6px 24px color-mix(in oklab, var(--hero) 25%, transparent);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -111,8 +106,6 @@
 }
 
 .dark {
-  --booking: oklch(0.48 0.17 255);
-  --booking-foreground: oklch(0.99 0 0);
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
