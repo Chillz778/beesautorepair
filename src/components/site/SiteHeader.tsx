@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
 import { business, navLinks } from "@/lib/business";
+import beeLogo from "@/assets/bee-mechanic-logo.png";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -8,9 +9,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur">
       <div className="container-site flex h-16 items-center justify-between gap-4 md:h-20">
-        <a href="#top" className="flex items-center gap-2 font-display text-lg font-bold tracking-tight text-primary">
-          <span className="grid size-9 place-items-center rounded-md bg-primary text-sm text-primary-foreground">B</span>
-          {business.name}
+        <a href="#top" className="flex min-w-0 items-center gap-2 font-display text-base font-bold text-primary sm:gap-3 sm:text-lg">
+          <img src={beeLogo} alt="Bumblebee mechanic holding a wrench in front of a tyre" width={1024} height={1024} className="size-12 shrink-0 object-contain md:size-16" />
+          <span className="max-w-36 leading-tight sm:max-w-none">{business.name}</span>
         </a>
 
         <nav aria-label="Main" className="hidden lg:block">
