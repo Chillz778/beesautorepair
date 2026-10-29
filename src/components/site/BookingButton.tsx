@@ -11,7 +11,7 @@ export function BookingButton({ floating = false }: { floating?: boolean }) {
           <span>Book an Appointment</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-[calc(100%-2rem)] sm:max-w-md">
+      <DialogContent className="max-w-[calc(100%_-_2rem)] sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Book an Appointment</DialogTitle>
           <DialogDescription>Online booking is not available yet. Please check back soon to schedule your visit.</DialogDescription>
