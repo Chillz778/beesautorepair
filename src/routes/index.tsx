@@ -1,24 +1,29 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { Hero } from "@/components/site/Hero";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "BEE'S Auto Repair — Reliable Auto Repair & Maintenance" },
+      { name: "description", content: "Honest auto repair, diagnostics, brakes, oil changes and routine maintenance. Request an appointment with BEE'S Auto Repair." },
+      { property: "og:title", content: "BEE'S Auto Repair" },
+      { property: "og:description", content: "Reliable auto repair. Honest service. Back on the road." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <SiteHeader />
+      <main>
+        <Hero />
+        {/* Next: Services, Why Choose Us, How It Works, Reviews, Appointment, Contact, Footer */}
+      </main>
+    </>
   );
 }
