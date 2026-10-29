@@ -1,6 +1,7 @@
-import { CalendarCheck, Phone, Wrench, ClipboardCheck, MessageSquare } from "lucide-react";
+import { Phone, Wrench, ClipboardCheck, MessageSquare } from "lucide-react";
 import heroImg from "@/assets/hero-workshop.jpg";
 import { business } from "@/lib/business";
+import { BookingButton } from "./BookingButton";
 
 const points = [
   { icon: ClipboardCheck, text: "Clear diagnosis before any work" },
@@ -27,9 +28,7 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <a href="#appointment" className="btn btn-accent btn-lg">
-            <CalendarCheck className="size-5" aria-hidden /> Request an Appointment
-          </a>
+          <BookingButton />
           <a href={business.phoneHref} className="btn btn-outline-light btn-lg">
             <Phone className="size-5" aria-hidden /> Call {business.phoneDisplay}
           </a>
