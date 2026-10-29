@@ -24,6 +24,8 @@
   --color-hero: var(--hero);
   --color-hero-foreground: var(--hero-foreground);
   --color-hero-muted: var(--hero-muted);
+  --color-message: var(--message);
+  --color-message-foreground: var(--message-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -73,6 +75,9 @@
   --hero: oklch(0.2 0.05 260);
   --hero-foreground: oklch(0.98 0.005 250);
   --hero-muted: oklch(0.85 0.02 250);
+  --message: oklch(0.48 0.17 255);
+  --message-foreground: oklch(0.99 0 0);
+  --shadow-message: 0 6px 24px color-mix(in oklab, var(--hero) 25%, transparent);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -184,4 +189,48 @@
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+/* Fixed message action pinned to the viewport edge. */
+.message-fixed {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 40;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  padding: .85rem 1.15rem;
+  transform: translateY(-50%);
+  border-radius: var(--radius) 0 0 var(--radius);
+  background: var(--message);
+  color: var(--message-foreground);
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: var(--shadow-message);
+  transition: background-color .2s, box-shadow .2s;
+}
+.message-fixed:hover { background: color-mix(in oklab, var(--message) 85%, var(--hero)); }
+.message-fixed:focus-visible { outline: 2px solid var(--ring); outline-offset: -4px; }
+.message-fixed:active { translate: 0 1px; }
+
+/* Phones: a thumb-reachable pill that clears the home bar, keeps a 48px tap target,
+   and leaves room at the bottom so page content can scroll past it. */
+@media (width < 48rem) {
+  .message-fixed {
+    top: auto;
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    transform: none;
+    min-height: 3rem;
+    border-radius: var(--radius);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body { padding-bottom: 5.5rem; }
 }
