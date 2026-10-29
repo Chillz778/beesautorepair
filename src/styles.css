@@ -184,54 +184,42 @@
   &:hover { background: color-mix(in oklab, var(--hero-foreground) 10%, transparent); border-color: var(--hero-foreground); } }
 @utility btn-ghost { color: var(--foreground); &:hover { background: var(--muted); } }
 
-/* Keep the call action at the viewport edge without covering the main content. */
-.call-fixed {
+/* Keep the booking action at the viewport edge without covering the main content. */
+.booking-fixed {
   position: fixed;
   right: 0;
   top: 50%;
   z-index: 40;
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: .6rem;
-  width: 3rem;
-  min-height: 13.5rem;
-  padding: 2.7rem .8rem 1rem;
-  writing-mode: vertical-rl;
+  gap: .55rem;
+  padding: .85rem 1.15rem;
   transform: translateY(-50%);
+  border: 0;
   border-radius: var(--radius) 0 0 var(--radius);
-  background: var(--call);
-  color: var(--call-foreground);
+  background: var(--booking);
+  color: var(--booking-foreground);
+  font-family: inherit;
   font-weight: 600;
   font-size: .95rem;
   letter-spacing: .01em;
-  box-shadow: var(--shadow-call);
+  white-space: nowrap;
+  box-shadow: var(--shadow-booking);
   transition: background-color .2s, box-shadow .2s;
 }
-.call-fixed:hover { background: color-mix(in oklab, var(--call) 85%, var(--hero)); }
-.call-fixed:focus-visible { outline: 2px solid var(--ring); outline-offset: -4px; }
-/* Phone glyph sits above the vertical label, kept upright outside the vertical text flow. */
-.call-fixed-icon {
-  position: absolute;
-  top: .8rem;
-  left: 50%;
-  translate: -50% 0;
-}
+.booking-fixed:hover { background: color-mix(in oklab, var(--booking) 85%, var(--hero)); }
+.booking-fixed:focus-visible { outline: 2px solid var(--ring); outline-offset: -4px; }
+.booking-fixed:active { translate: 0 1px; }
 @media (width < 48rem) {
-  .call-fixed {
+  .booking-fixed {
     top: auto;
     right: 1rem;
     bottom: max(1rem, env(safe-area-inset-bottom));
-    width: auto;
-    min-height: 3rem;
-    writing-mode: horizontal-tb;
     transform: none;
-    flex-direction: row;
     border-radius: var(--radius);
-    padding: .8rem 1rem;
   }
-  .call-fixed-icon { position: static; translate: none; }
   body { padding-bottom: 5rem; }
 }
 @media (hover: hover) and (pointer: fine) {
